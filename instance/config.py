@@ -1,4 +1,4 @@
-NEWS_API_KEY ='8b1203793470a1bcea2a936ee4dff354'
+NEWS_API_KEY =bd9f4feb5df945f89c92207beb396599
 import os
 
 class Config:
