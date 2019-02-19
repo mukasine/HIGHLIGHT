@@ -11,7 +11,7 @@ class NewsTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.news_news = News(1234,'Python Must Be Crazy','A thrilling new Python Series','https://image.tmdb.org/t/p/w500/khsjha27hbs',8.5,129993)
+        self.news_news = News("techcrunch","TechCrunch", "Romain Dillet","Coinbase users can now withdraw Bitcoin SV following BCH fork","The global crypto market may have tanked last year, but notable names have joined forces to develop Bitcoin and blockchain financial services in Japan, which has emerged as one of the world’s most crypto-friendly market. "http://techcrunch.com/2019/01/21/digital-garage-teams-up-with-blockstream-to-develop-blockchain-financial-services-in-japan/",urlToImage": "https://techcrunch.com/wp-content/uploads/2017/08/bitcoin-split-2017a.jpg?w=711",)
 
     def test_instance(self):
         self.assertTrue(isinstance(self.news_news,News))
