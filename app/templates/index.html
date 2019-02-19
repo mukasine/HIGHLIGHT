@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best News Review website </title>
-        {% endif %}
-    </head>
-    <body>
-    
+
         {% extends 'base.html'%}
         {% import 'macros.html' as macro%}
         
@@ -24,6 +13,14 @@
 
 <!-- Content block -->
 {% block content %}
+<div class="container">
+    <form>
+        <input type="text" name="news_query" placeholder="Search for a News" class="form-control">
+        <input type="submit"  value="Submit" class="btn btn-default">
+    </form>
+
+</div>
+
 
 <!-- Popular news -->
 <h3> Popular News</h3>
@@ -41,17 +38,5 @@
     {{ macro.displayNewsList(now_showing)}}
 </ul>
 {% endblock%}
-{% block content %}
-
-<div class="container">
-    <form>
-        <input type="text" name="news_query" placeholder="Search for a News" class="form-control">
-        <input type="submit"  value="Submit" class="btn btn-default">
-    </form>
-
-</div>
-
-    </body>
-</html>
 
 
