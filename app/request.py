@@ -54,23 +54,42 @@ def process_results(news_list):
 def get_new(id):
     get_news_details_url = base_url.format(id,api_key)
     print(get_news_details_url)
-
+    articles_results=None
     with urllib.request.urlopen(get_news_details_url) as url:
         news_details_data = url.read()
         news_details_response = json.loads(news_details_data)
 
-        news_object = None
-        if news_details_response:
-            id = news_details_response.get('id')
-            title = news_details_response.get('original_title')
-            overview = news_details_response.get('overview')
-            poster = news_details_response.get('poster_path')
-            vote_average = news_details_response.get('vote_average')
-            vote_count = news_details_response.get('vote_count')
+        if news_details_response['articles']:
+            news_details_list=news_details_response['articles']
+            news_results=process_result(news_details_list)
 
-            news_object = News(id,title,overview,poster,vote_average,vote_count)
+    return articles_results
 
-    return news_object
+        
+       
+
+def process_result(news_list):
+    '''
+    Function  that processes the news result and transform them to a list of Objects
+
+    Args:
+        news_list: A list of dictionaries that contain news details
+
+    Returns :
+        news_results: A list of objects
+    '''
+    articles_results = []
+    for news_item in news_list:
+        author=news_item.get('author')
+        title=news_item.get('title')
+        description=news_item.get('description')
+        url=news_item.get('url')
+        imageUrl=news_item('urlToImage')
+        publishedAt=news_item('publishedAt')
+
+        article_object=Review(author,title,description,url,imageUrl,publishedAt)
+        articles_results.append(article_object)
+    return articles_results
 
 def search_news(news_name):
     search_news_url = 'https://api.thenewsdb.org/3/search/nwes?api_key={}&query={}'.format(api_key,news_name)
