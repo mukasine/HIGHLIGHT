@@ -1,29 +1,24 @@
 {% macro displayNewsList(news_list) %}
 
-    {% for news in news_list %}
-        <li>{{ news.title}}</li>
-    {% endfor %}
-
-{% endmacro %}
-
 <!-- Content block -->
-{% block content %}
 <div class="container">
 
     <!-- Poster background -->
     <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{news.poster}}) no-repeat center center">
-        </div>
-
+        {% for news in news_list %}
+        <!-- <li>{{ news.name}}</li> -->
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 news-details">
-            <h3>{{ news.title }}</h3>
+            <a href="/news/{{news.id}}">{{ news.name }}</a>
+            <!-- <h3></h3> -->
 
-            <p class="overview"> {{ news.overview }}</p>
-            <p class="ratings"> <b> {{ news.vote_average }}</b> - <i>{{ news.vote_count}} votes </i> </p>
+            <p class="overview"> {{ news.description }}</p>
+            <!-- <p class="ratings"> <b> {{ news.vote_average }}</b> - <i>{{ news.vote_count}} votes </i> </p> -->
 
 
         </div>
+        {% endfor %}
     </div>
 
 </div>
-{% endblock %}
+
+{% endmacro %}

@@ -2,28 +2,31 @@ from app import app
 import urllib.request,json
 from .models import news
 News = news.News
+Source = news.Source
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 
 # Getting the news base url
-base_url = app.config["NEWS_API_BASE_URL"]
+base_url = app.config["NEWS_ARTICLES_API_BASE_URL"]
+source_url = app.config["NEWS_SOURCES_API_BASE_URL"]
 def get_news(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = base_url.format(category,api_key)
-    print(get_news_url)
+    get_news_url = source_url.format(api_key)
+    
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
         news_results = None
 
-        if get_news_response['results']:
-            news_results_list = get_news_response['results']
+        if get_news_response['sources']:
+            news_results_list = get_news_response['sources']
             news_results = process_results(news_results_list)
 
-
+    
+    # print(news_results)
     return news_results
 
 def process_results(news_list):
@@ -39,20 +42,18 @@ def process_results(news_list):
     news_results = []
     for news_item in news_list:
         id = news_item.get('id')
-        title = news_item.get('original_title')
-        overview = news_item.get('overview')
-        poster = news_item.get('poster_path')
-        vote_average = news_item.get('vote_average')
-        vote_count = news_item.get('vote_count')
-
-        if poster:
-            news_object = News(id,title,overview,poster,vote_average,vote_count)
-            news_results.append(news_object)
-
+        name = news_item.get('name')
+        description = news_item.get('description')
+        # poster = news_item.get('poster_path')
+        # vote_average = news_item.get('vote_average')
+        # vote_count = news_item.get('vote_count')
+        news_object = Source(id,name,description)
+        news_results.append(news_object)
     return news_results
 
 def get_new(id):
     get_news_details_url = base_url.format(id,api_key)
+    print(get_news_details_url)
 
     with urllib.request.urlopen(get_news_details_url) as url:
         news_details_data = url.read()

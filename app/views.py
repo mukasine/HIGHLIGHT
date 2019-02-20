@@ -25,7 +25,7 @@ from flask import render_template,request,redirect,url_for
 #     now_showing_news = get_news('now_playing')
 #     title = 'Home - Welcome to The best News Review Website Online'
 #     return render_template('index.html', title = title, popular = popular_news, upcoming = upcoming_news, now_showing = now_showing_news )
-@app.route('/news/<int:id>')
+@app.route('/news/<id>')
 def news(id):
 
     '''
@@ -62,9 +62,9 @@ def index():
 
     title = 'Home - Welcome to The best News Review Website Online'
 
-    search_news = request.args.get('news_query')
+    # search_news = request.args.get('news_query')
 
-    if search_news:
-        return redirect(url_for('search',news_name=search_news))
-    else:
-        return render_template('index.html', title = title, popular = popular_news)
+    # if search_news:
+    #     return redirect(url_for('search',news_name=search_news))
+    # else:
+    return render_template('index.html', title = title, popular = popular_news)
