@@ -43,7 +43,7 @@ Highlight is a web app where a user can preview various news articles from diffe
 * The program should allow the user to click on aricle and read it from source website
 
 
-[Link to live website](https://highlight2.herokuapp.com/)
+
 ## Known Bugs
 
 There are no known bugs yet.
@@ -58,4 +58,8 @@ Having any issues?
 Email:mclaremukasine@.com
 Tel:0782586013
 Slack:MUKASINE Marie Claire
+### License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+Copyright (c) 2019 **MUKASINE Marie Claire**
 
