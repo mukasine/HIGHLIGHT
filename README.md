@@ -20,12 +20,12 @@ Highlight is a web app where a user can preview various news articles from diffe
     $ git clone https://github.com/Anabella1109/News.git<br>
     $ cd News
 
+### Running
+ * In your terminal<br>
 
-### Test
-* To run tests
-  * In your terminal<br>
-  $ python3.6 source_test.py<br>
-   $ python3.6 article_.py
+     $ chmod +x run.py<br>
+     $ ./run.py
+
 
 
 ##BDD
