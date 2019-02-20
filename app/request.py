@@ -2,7 +2,7 @@ from app import app
 import urllib.request,json
 from .models import news,articles
 
-News = news.News
+Source = news.Source
 Article = articles.Article
 # Getting api key
 api_key = app.config['NEWS_API_KEY']

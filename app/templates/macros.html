@@ -27,7 +27,7 @@
 
     {% for article in article_list %}
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="margin-bottom: 20px;">
-          <img src="{{article.inmageUrl}}" alt="{{article.title}}" class="img-responsive" style="height: 200px;">
+          <img src="{{article.imageUrl}}" alt="{{article.title}}" class="img-responsive" style="height: 200px;">
           <h4>{{article.title | truncate(35)}}</h4>
           <p>{{article.description | truncate(80)}}</p>
           <br>
