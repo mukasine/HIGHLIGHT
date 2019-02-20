@@ -48,13 +48,16 @@ Highlight is a web app where a user can preview various news articles from diffe
 
 There are no known bugs yet.
 
+## Technologies used
+
+* Python3.6(Flask)
 
 ## Support and contact details
 
 Having any issues?
-Email:bellaxbx1109@gmail.com
-Slack:TUYISENGE Anabella
-
+Email:mclaremukasine@.com
+Tel:0782586013
+Slack:MUKASINE Marie Claire
 ### License
 
 [MIT](https://choosealicense.com/licenses/mit/)
