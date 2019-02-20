@@ -17,7 +17,7 @@ Highlight is a web app where a user can preview various news articles from diffe
 * In your terminal <br>
 
     $ source <name of virtual environment>/bin/activate<br>
-    $ git clone https://github.com/Anabella1109/News.git<br>
+    $ git clone https://github.com/mukasine/HIGHLIGHT.git<br>
     $ cd News
 
 ### Running
@@ -42,7 +42,7 @@ Highlight is a web app where a user can preview various news articles from diffe
 * The program should allow the user to read articles from a specific source
 * The program should allow the user to click on aricle and read it from source website
 
-
+[Link to live website](https://highlight2.herokuapp.com/)
 
 ## Known Bugs
 
