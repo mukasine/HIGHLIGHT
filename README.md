@@ -33,6 +33,14 @@ Highlight is a web app where a user can preview various news articles from diffe
    $ python3.6 article_.py
 
 
+##BDD
+
+###SPECS
+
+
+* The program should allow the user to see different sources of news
+* The program should allow the user to read articles from a specific source
+* The program should allow the user to click on aricle and read it from source website
 
 
 [Link to live website](https://highlight2.herokuapp.com/)
@@ -40,9 +48,6 @@ Highlight is a web app where a user can preview various news articles from diffe
 
 There are no known bugs yet.
 
-## Technologies used
-
-* Python3.6(Flask)
 
 ## Support and contact details
 
