@@ -1,4 +1,4 @@
-class Review:
+class Article:
 
     all_reviews = []
     def __init__(self,author,title,description,url,imageUrl,publishedAt):
@@ -6,7 +6,7 @@ class Review:
         self.title=title
         self.description= description
         self.url=url
-        self.imageurl = imageurl
+        self.imageUrl = imageUrl
         self.publishedAt = publishedAt
 
 

@@ -32,7 +32,7 @@ def news(id):
     View news page function that returns the news details page and its data
     '''
     news = get_new(id)
-    title = f'{news.title}'
+    title = f'{id}'
 
     return render_template('news.html',title = title,news = news)
 

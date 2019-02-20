@@ -1,8 +1,9 @@
 from app import app
 import urllib.request,json
-from .models import news
+from .models import news,articles
+
 News = news.News
-Source = news.Source
+Article = articles.Article
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 
@@ -53,15 +54,17 @@ def process_results(news_list):
 
 def get_new(id):
     get_news_details_url = base_url.format(id,api_key)
-    print(get_news_details_url)
-    articles_results=None
+    # print(get_news_details_url)
     with urllib.request.urlopen(get_news_details_url) as url:
         news_details_data = url.read()
         news_details_response = json.loads(news_details_data)
 
+        articles_results=None
+
+
         if news_details_response['articles']:
             news_details_list=news_details_response['articles']
-            news_results=process_result(news_details_list)
+            articles_results=process_result(news_details_list)
 
     return articles_results
 
@@ -84,10 +87,10 @@ def process_result(news_list):
         title=news_item.get('title')
         description=news_item.get('description')
         url=news_item.get('url')
-        imageUrl=news_item('urlToImage')
-        publishedAt=news_item('publishedAt')
+        imageUrl=news_item.get('urlToImage')
+        publishedAt=news_item.get('publishedAt')
 
-        article_object=Review(author,title,description,url,imageUrl,publishedAt)
+        article_object=Article(author,title,description,url,imageUrl,publishedAt)
         articles_results.append(article_object)
     return articles_results
 
