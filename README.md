@@ -58,8 +58,4 @@ Having any issues?
 Email:mclaremukasine@.com
 Tel:0782586013
 Slack:MUKASINE Marie Claire
-### License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-Copyright (c) 2019 **MUKASINE Marie Claire**
 
